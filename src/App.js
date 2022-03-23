@@ -1,19 +1,21 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 
-import logo from './logo.svg';
-import './App.css';
+import Index from './components/index';
+import Navbar from './components/navigation/Navbar';
+import AboutUs from './components/company/AboutUs';
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-          <div>
-             Hello
-          </div>      
-      </BrowserRouter>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Navbar />
+            
+            <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<AboutUs />} />
+            </Routes>   
+        </div>
+    );
 }
 
 export default App;
